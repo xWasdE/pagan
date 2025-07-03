@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>pagan.com.tr | Satılık Alan Adı</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(-45deg, #1e292d, #324a4a, #4e7a6e, #6da18d);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .card {
+    background: rgba(10, 24, 23, 0.75);
+    border-radius: 30px;
+    padding: 3rem 4rem;
+    max-width: 680px;
+    width: 100%;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+  }
+
+  .logo {
+    width: 120px;
+    margin-bottom: 1.8rem;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #7ac1a6, #4e7a6e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 2.4rem;
+    color: #d5e4db;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    color: #7ac1a6;
+    font-weight: 600;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(122, 193, 166, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(122, 193, 166, 0.4);
+  }
+
+  .btn:hover {
+    background: rgba(122, 193, 166, 0.3);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(122, 193, 166, 0.6);
+  }
+
+  footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: rgba(213, 228, 219, 0.6);
+  }
+
+  footer a {
+    color: #7ac1a6;
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      padding: 2.5rem 1.5rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img src="logo.png" alt="pagan logo" class="logo" />
+    <h1>pagan.com.tr</h1>
+    <p>Bu alan adı <span style="color:#7ac1a6;">satılıktır</span>.</p>
+    <a href="mailto:domain@wasde.com.tr" class="btn">İletişim • domain@wasde.com.tr</a>
+    <footer>
+      &copy; 2025 pagan.com.tr<br />
+      Alan adı sahibi: <a href="https://www.wasde.com.tr" target="_blank" rel="noopener noreferrer">www.wasde.com.tr</a>
+    </footer>
+  </div>
+</body>
+</html>
