@@ -1,123 +1,239 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>pagan.com.tr | Satılık Alan Adı</title>
+<title>Pagan.com.tr | Satılık Alan Adı</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Merriweather:ital,wght@0,400;1,700&display=swap');
 
+  /* Reset */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
-
   html, body {
     height: 100%;
-    font-family: 'Space Grotesk', sans-serif;
-    background: linear-gradient(-45deg, #1e292d, #324a4a, #4e7a6e, #6da18d);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    color: #fff;
+    font-family: 'Merriweather', serif;
+    background: linear-gradient(135deg, #2e2b24, #191613);
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #c9c1a6;
     text-align: center;
-    padding: 2rem;
+    position: relative;
   }
 
-  @keyframes gradientShift {
+  /* Yavaş renk geçişi arka plan */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(45deg, #1b1913, #382f16, #4a421d, #382f16, #1b1913);
+    background-size: 400% 400%;
+    animation: bgShift 25s ease infinite;
+    z-index: 0;
+    filter: brightness(0.85);
+  }
+  @keyframes bgShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
 
-  .card {
-    background: rgba(10, 24, 23, 0.75);
-    border-radius: 30px;
-    padding: 3rem 4rem;
-    max-width: 680px;
-    width: 100%;
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
+  /* Hafif yaprak dokusu */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/leaf.png') repeat;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+    animation: leafMove 40s linear infinite;
+  }
+  @keyframes leafMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 1200px 1200px; }
   }
 
+  /* Container */
+  .container {
+    position: relative;
+    z-index: 5;
+    background: rgba(25, 22, 14, 0.9);
+    border-radius: 28px;
+    padding: 3rem 4rem 4rem;
+    max-width: 620px;
+    width: 90vw;
+    box-shadow: 0 0 30px 4px #7a6f4eaa;
+    border: 2px solid #7a6f4e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Logo nefes animasyon */
   .logo {
     width: 120px;
     margin-bottom: 1.8rem;
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 0 12px #9c8c5a);
+    animation: breathe 6s ease-in-out infinite;
+    transition: transform 0.3s ease;
+  }
+  .logo:hover {
+    transform: scale(1.15) rotate(8deg);
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 12px #9c8c5a);}
+    50% { transform: scale(1.05) rotate(2deg); filter: drop-shadow(0 0 20px #b7ad67);}
   }
 
+  /* Başlık altın gradyan ve gölge */
   h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    background: linear-gradient(to right, #7ac1a6, #4e7a6e);
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3.6rem;
+    background: linear-gradient(90deg, #d4b357, #a3853d, #d4b357);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 0 8px #bfa94f,
+      0 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 1.2rem;
   }
 
+  /* Satılık metni */
   p {
+    font-size: 1.4rem;
+    color: #dbd3a0;
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  /* Buton */
+  a.btn {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
     font-size: 1.3rem;
-    margin-bottom: 2.4rem;
-    color: #d5e4db;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
-    color: #7ac1a6;
-    font-weight: 600;
+    padding: 1rem 3.8rem;
+    background: linear-gradient(135deg, #a29352, #6d6733);
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(122, 193, 166, 0.7);
+    color: #2a2410;
+    box-shadow: 0 0 40px 5px #bba44daa;
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(122, 193, 166, 0.4);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    transition: background 0.4s ease, box-shadow 0.3s ease;
+  }
+  a.btn::before {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.45), transparent 75%);
+    animation: shine 4s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes shine {
+    0% { transform: translate(-100%, -100%) rotate(45deg); }
+    100% { transform: translate(100%, 100%) rotate(45deg); }
+  }
+  a.btn:hover {
+    background: linear-gradient(135deg, #d6cd7d, #b8af6e);
+    box-shadow: 0 0 60px 8px #d7d072cc;
+    color: #1b1807;
   }
 
-  .btn:hover {
-    background: rgba(122, 193, 166, 0.3);
-    color: #fff;
-    box-shadow: 0 0 30px rgba(122, 193, 166, 0.6);
-  }
-
+  /* Footer */
   footer {
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: rgba(213, 228, 219, 0.6);
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    color: #8b855c;
   }
-
   footer a {
-    color: #7ac1a6;
+    color: #b1a969;
     text-decoration: none;
   }
+  footer a:hover {
+    text-decoration: underline;
+  }
 
-  @media (max-width: 600px) {
-    .card {
-      padding: 2.5rem 1.5rem;
-    }
+  /* Ay fazları üstte */
+  .moon-phases {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 16px;
+    z-index: 10;
+  }
+  .moon-phases div {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #f3f1de, #5a4f33);
+    box-shadow:
+      inset -9px 0 0 2px #191613,
+      0 0 8px 2px #b0a778;
+    position: relative;
+    animation: glowPulse 3.5s ease-in-out infinite alternate;
+  }
+  .moon-phases div:nth-child(2) {
+    background: radial-gradient(circle at 60% 50%, #f3f1de, #5a4f33);
+    box-shadow: inset 9px 0 0 2px #191613, 0 0 8px 2px #b0a778;
+    animation-delay: 0.8s;
+  }
+  .moon-phases div:nth-child(3) {
+    background: #f3f1de;
+    box-shadow: 0 0 10px 4px #b0a778cc;
+    animation-delay: 1.6s;
+  }
+  .moon-phases div:nth-child(4) {
+    background: radial-gradient(circle at 60% 50%, #f3f1de, #5a4f33);
+    box-shadow: inset 9px 0 0 2px #191613, 0 0 8px 2px #b0a778;
+    animation-delay: 2.4s;
+  }
+  .moon-phases div:nth-child(5) {
+    background: radial-gradient(circle at 40% 40%, #f3f1de, #5a4f33);
+    box-shadow: inset -9px 0 0 2px #191613, 0 0 8px 2px #b0a778;
+    animation-delay: 3.2s;
+  }
+
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 6px 2px #b0a778; }
+    100% { box-shadow: 0 0 15px 6px #d8d279; }
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.8rem;
     }
-    p {
-      font-size: 1.1rem;
+    a.btn {
+      font-size: 1rem;
+      padding: 0.85rem 2.5rem;
     }
   }
 </style>
 </head>
 <body>
-  <div class="card">
-    <img src="logo.png" alt="pagan logo" class="logo" />
-    <h1>pagan.com.tr</h1>
-    <p>Bu alan adı <span style="color:#7ac1a6;">satılıktır</span>.</p>
-    <a href="mailto:domain@wasde.com.tr" class="btn">İletişim • domain@wasde.com.tr</a>
+  <div class="moon-phases" aria-hidden="true" role="presentation">
+    <div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <main class="container" role="main" aria-label="Pagan alan adı satılık sayfası">
+    <img src="logo.png" alt="Pagan logosu" class="logo" />
+    <h1>Pagan.com.tr</h1>
+    <p>Bu alan adı <strong>satılıktır</strong>.</p>
+    <a href="mailto:domain@wasde.com.tr" class="btn" aria-label="İletişim maili gönder">İletişim : domain@wasde.com.tr</a>
     <footer>
-      &copy; 2025 pagan.com.tr<br />
+      &copy; 2025 Pagan.com.tr<br />
       Alan adı sahibi: <a href="https://www.wasde.com.tr" target="_blank" rel="noopener noreferrer">www.wasde.com.tr</a>
     </footer>
-  </div>
+  </main>
 </body>
 </html>
